@@ -1,27 +1,9 @@
-<p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/3129129/22811426/bb69dc06-ef0c-11e6-8092-a0bea9060b35.png"/>
-</p>
+# myHive Web Portal.
+This is the source project for the Georgia Tech ECE Hive **myHive** portal. 
 
----
+Project is developed with React.
 
-[![Build status: Linux](https://img.shields.io/travis/coryhouse/react-slingshot.svg?style=flat-square)](https://travis-ci.org/coryhouse/react-slingshot)
-[![Build status: Windows](https://img.shields.io/appveyor/ci/coryhouse/react-slingshot/master.svg?style=flat-square)](https://ci.appveyor.com/project/coryhouse/react-slingshot/branch/master)
-[![Dependency Status](https://david-dm.org/coryhouse/react-slingshot.svg?style=flat-square)](https://david-dm.org/coryhouse/react-slingshot)
-[![Coverage Status](https://img.shields.io/coveralls/coryhouse/react-slingshot/master.svg?style=flat-square)](https://coveralls.io/github/coryhouse/react-slingshot?branch=master)
-
-A comprehensive starter kit for rapid application development using React.
-
-Why Slingshot?
-
-1. **One command to get started** - Type `npm start` to start development in your default browser.
-2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
-3. **One command line to check** - All feedback is displayed on a single command line.
-4. **No more JavaScript fatigue** - Slingshot uses [the most popular and powerful libraries](#technologies) for working with React.
-5. **Working example app** - The included example app shows how this all works together.
-6. **Automated production build** - Type `npm run build` to do all this:
-
-[![React Slingshot Production Build](https://img.youtube.com/vi/qlfDLsX-J0U/0.jpg)](https://www.youtube.com/watch?v=qlfDLsX-J0U)
-
+Your contribution is welcome and appreciated.
 # Get Started
 
 1. **Initial Machine Setup**
@@ -31,26 +13,10 @@ Why Slingshot?
 2. **Clone the project**
 
     `git clone https://github.com/coryhouse/react-slingshot.git`.
-
-3. **Run the setup script**
-
-    `npm run setup`
-
-4. **Run the example app**
-
-    `npm start -s`
+3. **Starting Project**
+   `npm start -s`
 
     This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
-
-5. **Review the example app.**
-
-    This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
-
-6. **Delete the example app files.**
-
-    Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](./docs/FAQ.md#i-just-want-an-empty-starter-kit).
-
-7. **Having issues?** See [Having Issues?](#having-issues-try-these-things-first).
 
 ## Initial Machine Setup
 
@@ -145,10 +111,3 @@ Slingshot offers a rich development experience using the following technologies:
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
 | [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction), [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
 
-The starter kit includes a working example app that puts all of the above to use.
-
----
-
-## Questions?
-
-Check out the [FAQ](./docs/FAQ.md)
