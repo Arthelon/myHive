@@ -28,7 +28,8 @@
   },
   "author": "Codetector",
   "dependencies": {
-    "connected-react-router": "4.4.1",
+    "bootstrap": "4.1.3",
+    "connected-react-router": "4.5.0",
     "object-assign": "4.1.1",
     "react": "16.4.2",
     "react-dom": "16.4.2",
