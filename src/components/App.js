@@ -9,10 +9,10 @@ import Navbar from './nav/Navbar'
 class App extends React.Component {
   render () {
     return (
-      <div>
+      <div className="h-100">
         <Navbar/>
-        <div className="container">
-          <div className="col-sm-8 offset-sm-2 mt-3">
+        <div className="container h-100">
+          <div className="col-sm-8 h-100 offset-sm-2 mt-3">
             <PrivateRoute exact path="/" component={HomePage} />
             <Route path="/login" component={LoginPage} />
           </div>

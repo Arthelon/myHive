@@ -4,6 +4,11 @@ import path from 'path';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'; 
 
 export default {
+  externals: {
+    config: JSON.stringify({
+      apiUrl: 'http://localhost:4000'
+    })
+  },
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
   },
