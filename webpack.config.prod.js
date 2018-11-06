@@ -9,8 +9,9 @@ import merge from 'webpack-merge'
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
-  __DEV__: false
-};
+  __DEV__: false,
+  __VERSION__: JSON.stringify(process.env.BUILD_NUMBER)
+}
 
 export default merge(baseConfig, {
   resolve: {

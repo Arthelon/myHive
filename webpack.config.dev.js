@@ -5,6 +5,11 @@ import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
 import baseConfig from './webpack.config.base'
 import merge from 'webpack-merge'
 
+const GLOBALS = {
+  __DEV__: true,
+  __VERSION__: JSON.stringify('DEV')
+}
+
 export default merge(baseConfig, {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
@@ -28,6 +33,7 @@ export default merge(baseConfig, {
     new HardSourceWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.DefinePlugin(GLOBALS),
     new HtmlWebpackPlugin({ // Create HTML file that includes references to bundled CSS and JS.
       template: 'src/index.ejs',
       minify: {
