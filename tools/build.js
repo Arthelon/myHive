@@ -1,3 +1,4 @@
+/* eslint-disable */
 // More info on Webpack's Node API here: https://webpack.js.org/api/node/
 // Allowing console calls below since this is a build file.
 /* eslint-disable no-console */

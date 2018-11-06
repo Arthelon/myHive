@@ -2,7 +2,7 @@ import { genModule, packModule } from '../module'
 
 const SET_LOADER = ''
 
-const {state, reducer, actions} = genModule({
+const { state, reducer, actions } = genModule({
   loader: {
     type: SET_LOADER,
     value: false,

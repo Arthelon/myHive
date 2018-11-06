@@ -1,3 +1,4 @@
+/* eslint-disable */
 import webpack from 'webpack';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import config from '../webpack.config.prod';
