@@ -5,13 +5,22 @@
 import browserSync from 'browser-sync';
 // Required for react-router browserHistory
 // see https://github.com/BrowserSync/browser-sync/issues/204#issuecomment-102623643
-import historyApiFallback from 'connect-history-api-fallback';
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack.config.dev';
+import historyApiFallback from 'connect-history-api-fallback'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import proxyMiddleware from 'http-proxy-middleware'
+import config from '../webpack.config.dev'
+import proxyConfig from '../config'
 
-const bundler = webpack(config);
+const bundler = webpack(config)
+
+let proxyMiddlewares = []
+if (proxyConfig && proxyConfig.dev && proxyConfig.dev.proxy) {
+  proxyMiddlewares = Object.keys(proxyConfig.dev.proxy).map(key => {
+    return proxyMiddleware(key, proxyConfig.dev.proxy[key])
+  })
+}
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -24,6 +33,7 @@ browserSync({
 
     middleware: [
       historyApiFallback(),
+      ...proxyMiddlewares,
 
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath
@@ -40,7 +50,7 @@ browserSync({
           timings: false,
           chunks: false,
           chunkModules: false
-        },
+        }
 
         // for other settings see
         // https://webpack.js.org/guides/development/#using-webpack-dev-middleware
@@ -56,4 +66,4 @@ browserSync({
   files: [
     'src/*.html'
   ]
-});
+})

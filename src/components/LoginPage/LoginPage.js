@@ -1,11 +1,11 @@
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import React from 'react'
 
-import {userActions} from '../../_actions/user.actions'
+import { userActions } from '../../actions/user.actions'
 import PropTypes from 'prop-types'
 
 class LoginPage extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -20,44 +20,44 @@ class LoginPage extends React.Component {
     this.handleLogin = this.handleLogin.bind(this)
   }
 
-  handleChange(e) {
-    const {name, value} = e.target
-    this.setState({[name]: value})
+  handleChange (e) {
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
-  handleLogin(e) {
+  handleLogin (e) {
     e.preventDefault()
 
-    this.setState({submitted: true})
-    const {username, password} = this.state
-    const {dispatch} = this.props
+    this.setState({ submitted: true })
+    const { username, password } = this.state
+    const { dispatch } = this.props
     if (username && password) {
       dispatch(userActions.login(username, password))
     }
   }
 
-  handleRegister(e) {
+  handleRegister (e) {
     e.preventDefault()
 
-    this.setState({submitted: true})
-    const {username, password} = this.state
-    const {dispatch} = this.props
+    this.setState({ submitted: true })
+    const { username, password } = this.state
+    const { dispatch } = this.props
     if (username && password) {
       dispatch(userActions.register(username, password))
     }
   }
 
   changeLogin = () => {
-    this.setState(() => ({showLogin: true}))
+    this.setState(() => ({ showLogin: true }))
   }
 
   changeRegister = () => {
-    this.setState(() => ({showLogin: false}))
+    this.setState(() => ({ showLogin: false }))
   }
 
-  render() {
-    const {loggingIn} = this.props
-    const {username, password, confirmPassword, submitted} = this.state
+  render () {
+    const { loggingIn } = this.props
+    const { username, password, confirmPassword, submitted } = this.state
     return (
       <div className="offset-md-3 col-md-6 h-100">
         <div className="card my-auto">
@@ -72,14 +72,14 @@ class LoginPage extends React.Component {
             </ul>
           </div>
           <div className="card-body">
-            {/*Login Form*/}
+            {/* Login Form */}
             {this.state.showLogin &&
             <form id="loginForm" name="form" onSubmit={this.handleSubmit}>
               <div className={'form-group' +
               (submitted && !username ? ' has-error' : '')}>
                 <input type="text" className="form-control" name="username"
-                       value={username} onChange={this.handleChange}
-                       placeholder="Username"/>
+                  value={username} onChange={this.handleChange}
+                  placeholder="Username"/>
                 {submitted && !username &&
                 <div className="help-block">Username is required</div>
                 }
@@ -87,8 +87,8 @@ class LoginPage extends React.Component {
               <div className={'form-group' +
               (submitted && !password ? ' has-error' : '')}>
                 <input type="password" className="form-control" name="password"
-                       value={password} onChange={this.handleChange}
-                       placeholder="Password"/>
+                  value={password} onChange={this.handleChange}
+                  placeholder="Password"/>
                 {submitted && !password &&
                 <div className="help-block">Password is required</div>
                 }
@@ -113,14 +113,14 @@ class LoginPage extends React.Component {
               </div>
             </form>
             }
-            {/*Register Form*/}
+            {/* Register Form */}
             {!this.state.showLogin &&
             <form id="loginForm" name="form" onSubmit={this.handleRegister}>
               <div className={'form-group' +
               (submitted && !username ? ' has-error' : '')}>
                 <input type="text" className="form-control" name="username"
-                       value={username} onChange={this.handleChange}
-                       placeholder="Username"/>
+                  value={username} onChange={this.handleChange}
+                  placeholder="Username"/>
                 {submitted && !username &&
                 <div className="help-block">Username is required</div>
                 }
@@ -128,16 +128,16 @@ class LoginPage extends React.Component {
               <div className={'form-group' +
               (submitted && !password ? ' has-error' : '')}>
                 <input type="password" className="form-control" name="password"
-                       value={password} onChange={this.handleChange}
-                       placeholder="Password"/>
+                  value={password} onChange={this.handleChange}
+                  placeholder="Password"/>
                 {submitted && !password &&
                 <div className="help-block">Password is required</div>
                 }
               </div>
               <div className='form-group'>
                 <input type="password" className="form-control" name="confirmPassword"
-                       value={this.confirmPassword} onChange={this.handleChange}
-                       placeholder="Confirm Password"/>
+                  value={this.confirmPassword} onChange={this.handleChange}
+                  placeholder="Confirm Password"/>
                 {password !== confirmPassword &&
                 <div className="help-block">Passwords are not the same</div>
                 }
@@ -162,15 +162,15 @@ class LoginPage extends React.Component {
 
 LoginPage.propTypes = {
   loggingIn: PropTypes.bool,
-  dispatch: PropTypes.any,
+  dispatch: PropTypes.any
 }
 
-function mapStateToProps(state) {
-  const {loggingIn} = state.authentication
+function mapStateToProps (state) {
+  const { loggingIn } = state.authentication
   return {
-    loggingIn,
+    loggingIn
   }
 }
 
 const connectedLoginPage = connect(mapStateToProps)(LoginPage)
-export {connectedLoginPage as LoginPage}
+export { connectedLoginPage as LoginPage }

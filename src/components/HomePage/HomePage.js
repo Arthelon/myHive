@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 class HomePage extends React.Component {
   render () {
-    const { user } = this.props;
+    const { user } = this.props
     return (
       <div className="col-md-6 col-md-offset-3">
         <h1>Hi {user.firstName}</h1>
@@ -14,7 +14,7 @@ class HomePage extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   const { authentication } = state
   const { user } = authentication
   return {

@@ -1,9 +1,9 @@
 // Set up your root reducer here...
 import { combineReducers } from 'redux'
 
-import { authentication } from './authentication.reducer'
+import modules from './modules'
 
 const rootReducer = combineReducers({
-  authentication
+  ...modules.reducers
 })
-export default rootReducer;
+export default rootReducer

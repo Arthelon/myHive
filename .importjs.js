@@ -8,7 +8,14 @@ module.exports = {
   namedExports: {
     'prop-types': ['PropTypes'],
   },
+  aliases: {
+    '@': 'src'
+  },
   moduleNameFormatter({moduleName}) {
-    return moduleName
+    if (moduleName.startsWith('src')) {
+      return `@${moduleName.substring(3)}`
+    } else {
+      return moduleName
+    }
   }
 }

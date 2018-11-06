@@ -1,14 +1,11 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'; 
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import path from 'path'
+import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
+import baseConfig from './webpack.config.base'
+import merge from 'webpack-merge'
 
-export default {
-  externals: {
-    config: JSON.stringify({
-      apiUrl: 'http://localhost:4000'
-    })
-  },
+export default merge(baseConfig, {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
   },
@@ -31,7 +28,7 @@ export default {
     new HardSourceWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
+    new HtmlWebpackPlugin({ // Create HTML file that includes references to bundled CSS and JS.
       template: 'src/index.ejs',
       minify: {
         removeComments: true,
@@ -126,4 +123,4 @@ export default {
       }
     ]
   }
-};
+})

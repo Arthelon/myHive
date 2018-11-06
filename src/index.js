@@ -3,11 +3,14 @@
 
 import { render } from 'react-dom'
 import React from 'react';
+import axios from 'axios'
 
 import { AppContainer } from 'react-hot-loader'
 
 import Root from './components/Root';
 import configureStore, { history } from './store/configureStore'
+
+axios.defaults.baseURL = '/api/'
 
 import './styles/styles.scss';
 
