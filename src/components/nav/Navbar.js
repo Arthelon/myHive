@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 
 class Navbar extends React.Component {
-  render () {
+  render() {
     return (
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">myHive</a>
+        <a className="navbar-brand" href="#">
+          myHive
+        </a>
       </nav>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;
