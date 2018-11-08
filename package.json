@@ -14,7 +14,7 @@
     "open:dist": "babel-node tools/distServer.js",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "style": "prettier --config=./package.json --write src/**/*.js tools/**/*.js",
+    "style": "prettier --config=./package.json --write 'src/**/*.js' 'tools/**/*.js'",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run lint && npm run test && npm run clean-dist",
@@ -104,6 +104,17 @@
   "repository": {
     "type": "git",
     "url": ""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest": {
     "moduleNameMapper": {
